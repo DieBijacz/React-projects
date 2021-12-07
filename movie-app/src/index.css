@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cabin', sans-serif;
+  
+}
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+:root {
+  --main-color: rgb(18, 25, 66);
+  --main-light-color:  rgb(53, 63, 121);
+}
+
+body {
+  background-color:var(--main-color);
+  color: white;
+}
+
+button {
+  padding: 5px 10px;
+  min-width: 50px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  margin: 0 5px;
+}
+
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main-light-color);
+  padding: 10px 30px;
+  gap: 10px;
+}
+.searchbar {
+  background-color: var(--main-light-color);
+  color: white;
+  border: white 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+.searchbar::placeholder {
+  color: white;
+}
+
+
+
+/* HEADER */
+/* MOVIES */
+.movies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.movie {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 200px;
+  border-radius: 10px;
+  background-color: var(--main-light-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.movie img {
+  width: 100%;
+}
+.movie-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  color: white;
+  text-shadow: 0 0 4px black;
+}
+.movie .movie-body p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tag {
+  padding: 2px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.tag.green {
+  color: rgb(26, 138, 26);
+}
+.tag.red {
+  color: rgb(172, 9, 9);
+
+}
+.overview {
+  position: absolute;
+  bottom: 50px;
+  background-color: rgba(18, 25, 66, 0.9);
+  padding: 10px;
+  border-right: 1px solid white;
+  transition: .5s ease-out;
+  transform: translateX(-100%);
+  overflow: auto;
+  max-height: 100%;
+}
+.overview::-webkit-scrollbar {
+  display: none;
+}
+.overview h4 {
+  border-bottom: 1px solid white;
+  padding: 2px;
+  margin-bottom: 5px;
+}
+.movie:hover .overview{
+  transform: translateX(0);
+}
+/* MOVIES */
