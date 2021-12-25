@@ -11,18 +11,44 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/* HEADER */
+.hero {
+  background-color: rgb(226, 226, 226);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  background-color: blue;
+}
+/* ====================================HEADER==================================== */
 header {
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: antiquewhite;
+  margin: 10px;
 }
-/* HEADER */
+/* ====================================HEADER==================================== */
+/* ====================================FAVORITES==================================== */
+.favorites{
+  background-color: red;
+  width: 400px;
+  min-height: 100px;
+  margin: 20px;
+}
+
+
+/* ====================================FAVORITES==================================== */
