@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
+import FeedbackForm from './components/FeedbackForm'
 import FeedbackList from './components/FeedbackList'
+import FeedbackStats from './components/FeedbackStats'
 import Header from './components/Header'
 import { feedbackData } from './data/FeedbackData'
 
@@ -7,11 +9,22 @@ export default function App() {
 
   const [feedback, setFeedback] = useState(feedbackData)
 
+  // delete feedback UI
+  const deleteFeedback = (id) => {
+    if(window.confirm('Are you sure you want to delete?')){
+      setFeedback(feedback.filter((item) => item.id !== id))    
+    }
+  }
+
   return (
     <>
       <Header />
       <div className="container">
-        <FeedbackList feedback={feedback} />
+        <FeedbackForm />
+        <FeedbackStats feedback={feedback} />
+        <FeedbackList 
+          feedback={feedback} 
+          handleDelete={deleteFeedback} />
       </div>
     </>
   )
