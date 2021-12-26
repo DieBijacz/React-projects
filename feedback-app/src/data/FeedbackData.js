@@ -1,11 +1,11 @@
 export const feedbackData = [
   {
-    id: 1,
+    id: "1",
     rating: 9,
     text: "makarena",
   },
   {
-    id: 2,
+    id: "2",
     rating: 4,
     text: "wiosło masło zgasło",
   },
