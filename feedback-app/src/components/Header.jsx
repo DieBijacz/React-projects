@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
 function Header({text, bgColor, textColor}) {
 
@@ -11,7 +12,9 @@ function Header({text, bgColor, textColor}) {
   return (
     <header style={headerStyle}>
       <div className="container">
-        <h3>{text}</h3>
+        <Link to='/'>
+          <h3>{text}</h3>
+        </Link>
       </div>    
     </header>
   )
