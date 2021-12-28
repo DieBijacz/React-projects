@@ -7,7 +7,6 @@ import AboutPage from './pages/AboutPage'
 import AboutIcon from './components/AboutIcon'
 import { FeedbackProvider } from './context/FeedbackContext'
 
-
 export default function App() {
 
   return (

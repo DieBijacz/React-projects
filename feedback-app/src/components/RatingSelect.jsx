@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
-
+import React, {useState, useContext, useEffect} from 'react'
+import FeedbackContext from '../context/FeedbackContext';
 
 function RatingSelect({select}) {
 
+  const {feedbackEdit} = useContext(FeedbackContext)
   const [selected, setSelected] = useState(10)
-
 
   const handleChange = (e) => {
     // + makes it numbebr instead string
@@ -12,6 +12,11 @@ function RatingSelect({select}) {
     // sets selected and passess it as prop to feedbackForm
     select(+e.currentTarget.value)
   }
+
+  // sets UI rating when edititing feedback 
+  useEffect(() => {
+    setSelected(feedbackEdit.item.rating)
+  }, [feedbackEdit])
 
   return (
     <ul className='rating'>
