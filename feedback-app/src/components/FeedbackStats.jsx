@@ -1,7 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, {useContext} from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 
-function FeedbackStats({feedback}) {
+function FeedbackStats() {
+
+  // brings data from provider
+  const {feedback} = useContext(FeedbackContext)
 
   //calculata avarage rating
   let avarage = feedback.reduce((acc, curr) => {
@@ -19,10 +22,6 @@ function FeedbackStats({feedback}) {
       <h4>Avarage rating: {isNaN(avarage) ? 0 : avarage}</h4>
     </div>
   )
-}
-
-FeedbackStats.propTypes = {
-  feedback: PropTypes.array.isRequired,
 }
 
 export default FeedbackStats
